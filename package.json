@@ -1,0 +1,19 @@
+{
+  "name": "scrapenews",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adj80/scrapenews.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adj80/scrapenews/issues"
+  },
+  "homepage": "https://github.com/adj80/scrapenews#readme"
+}
