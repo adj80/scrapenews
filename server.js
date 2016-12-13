@@ -11,7 +11,7 @@ var mongoose = require("mongoose");
 var app = express();
 
 var Story = require("./models/story.js");
-var Comment = require(".models/comment.js");
+var Comment = require("./models/comment.js");
 
 
 //console.log();
@@ -42,11 +42,11 @@ app.get("/scrape", function(req, res) {
 
 var $ = cheerio.load(html);
 
-$("h3.latest-head").each(function(i, element) {
+$("#contents .row .row").each(function(i, element) {
+console.log ("element =", element);
+var result = {};
 
-var result = [];
-
-result.title = $(this).parent("a").text();
+result.title = $(this).children("class").text();
 
 result.link = $(this).parent("a").attr("href");
 
@@ -72,6 +72,7 @@ res.send("Scrape is Finished");
 });
 
 app.get("/stories", function(req, res) {
+	console.log("we are in the stories route");
 	Story.Find({}, function(error, doc) {
 
 		if (error) {
